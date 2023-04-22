@@ -76,4 +76,13 @@ node 'puppet.theits23.renf.ro' {
     group  => 'puppet',
     mode   => '0750',
   }
+  file { [
+    '/etc/puppetlabs/code/environments/production',
+    '/etc/puppetlabs/code/environments/production/modules',
+  ]:
+    ensure => directory,
+    owner  => 'puppet',
+    group  => 'puppet',
+    mode   => '0750',
+  }
 }

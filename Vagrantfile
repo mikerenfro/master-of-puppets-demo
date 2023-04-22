@@ -28,4 +28,9 @@ Vagrant.configure("2") do |config|
     puppet.vm.provision "shell", inline: install_dep('puppetlabs-sshkeys_core', '2.4.0')
     puppet.vm.provision "puppet", manifests_path: "puppet"
   end
+  config.vm.define "web" do |web|
+    web.vm.hostname = "web"
+    web.vm.network "private_network", ip: "10.234.24.4",
+    netmask: "255.255.255.0"
+  end
 end
