@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
     puppet.vm.provision "shell", inline: install_dep('puppet-ssh_keygen', '5.0.2')
     puppet.vm.provision "shell", inline: install_dep('puppet-r10k', '10.3.0')
     puppet.vm.provision "shell", inline: install_dep('puppetlabs-sshkeys_core', '2.4.0')
+    puppet.vm.provision "shell", inline: install_dep('npwalker-recursive_file_permissions', '0.6.2')
     puppet.vm.provision "puppet", manifests_path: "puppet"
   end
   config.vm.define "web" do |web|
