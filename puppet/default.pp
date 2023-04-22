@@ -21,6 +21,7 @@ node 'puppet.theits23.renf.ro' {
     server         => true,
     server_foreman => false,
     server_reports => 'store',
+    server_external_nodes => '',
   }
   package { 'git':
     ensure => present,
