@@ -1,0 +1,6 @@
+- id: r10k
+  execute-command: /usr/local/bin/r10k-deploy-ref
+  command-working-directory: /tmp
+  pass-arguments-to-command:
+  - source: payload
+    name: ref

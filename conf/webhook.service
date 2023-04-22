@@ -1,0 +1,10 @@
+[Unit]
+Description=Small server for creating HTTP endpoints (hooks)
+Documentation=https://github.com/adnanh/webhook/
+
+[Service]
+ExecStart=/usr/local/bin/webhook -nopanic -hooks /etc/webhook.yaml -verbose -port 9000
+User=puppet
+
+[Install]
+WantedBy=multi-user.target

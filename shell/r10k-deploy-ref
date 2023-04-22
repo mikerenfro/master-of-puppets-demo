@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 REF"
+    echo "Example: $0 refs/heads/production" exit 1
+else
+    # "How to split a string in shell and get the last field"
+    # -- https://stackoverflow.com/a/9125818
+    REF="$1"; BRANCH=$(echo "${REF}" | rev | cut -d/ -f1 | rev)
+    r10k deploy environment "${BRANCH}" -p
+    puppet generate types --environment "${BRANCH}" \
+        --codedir /etc/puppetlabs/code
+fi
