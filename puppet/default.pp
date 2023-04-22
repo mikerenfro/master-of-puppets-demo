@@ -18,9 +18,9 @@ node 'git.theits23.renf.ro' {
 }
 node 'puppet.theits23.renf.ro' {
   class { 'puppet':
-    server         => true,
-    server_foreman => false,
-    server_reports => 'store',
+    server                => true,
+    server_foreman        => false,
+    server_reports        => 'store',
     server_external_nodes => '',
   }
   package { 'git':
