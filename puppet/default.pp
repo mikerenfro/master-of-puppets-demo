@@ -16,3 +16,9 @@ node 'git.theits23.renf.ro' {
     },
   }
 }
+node 'puppet.theits23.renf.ro' {
+  class { 'puppet':
+    server         => true,
+    server_foreman => false,
+  }
+}
