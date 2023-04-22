@@ -86,3 +86,8 @@ node 'puppet.theits23.renf.ro' {
     mode   => '0750',
   }
 }
+node 'web.theits23.renf.ro' {
+  notify { 'web to be configured from puppet server':
+    message => 'Web server to be configured from the Puppet server.',
+  }
+}
