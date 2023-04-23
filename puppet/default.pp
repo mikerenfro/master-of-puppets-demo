@@ -77,12 +77,13 @@ node 'puppet.theits23.renf.ro' {
     group  => 'puppet',
     mode   => '0750',
   }
-recursive_file_permissions { '/etc/puppetlabs/code':
-  file_mode => '0750',
-  dir_mode  => '0750',
-  owner     => 'puppet',
-  group     => 'puppet',
-}}
+  recursive_file_permissions { '/etc/puppetlabs/code':
+    file_mode => '0750',
+    dir_mode  => '0750',
+    owner     => 'puppet',
+    group     => 'puppet',
+  }
+}
 node 'web.theits23.renf.ro' {
   notify { 'web to be configured from puppet server':
     message => 'Web server to be configured from the Puppet server.',
